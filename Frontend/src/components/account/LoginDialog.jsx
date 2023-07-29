@@ -9,27 +9,40 @@ import { addUser } from '../../service/api';
 import { AccountContext } from '../../context/AccountProvider';
 import { qrCodeImage } from '../../constants/data';
 
-const Component = styled(Box)`
-    display: flex; 
-`;
+
+// const Component = styled(Box)`
+//     display: flex; 
+// `;
 
 const Container = styled(Box)`
     padding: 56px 0 56px 56px;
 `;
 
 const QRCOde = styled('img')({
-    margin: '50px 0 0 50px',
+    margin: 'auto',
     height: 264,
-    width: 264
+    width: 264,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    
 });
 
 const Title = styled(Typography)`
-    font-size: 26px;
+    font-size: 36px;
     margin-bottom: 25px;
-    color: #525252;
+    font-family: 'Borel', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'REM', sans-serif;
     font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'REM', sans-serif;
     font-weight: 300;
+    text-align:center;
+    color:#5D54A4;
+
 `;
+
 
 const StyledList = styled(List)`
     &  > li {
@@ -40,10 +53,23 @@ const StyledList = styled(List)`
         color: #4a4a4a;
     }
 `;
+const Glogin=styled(Typography)`
+        font-size: 26px;
+        text-align:center;
+        
+        font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+        font-family: 'Josefin Sans', sans-serif;
+        font-family: 'REM', sans-serif;
+        font-weight: 300;
+        color: #525252;
+        
+`;
+
 
 const dialogStyle = {
     marginTop: '12%',
-    height: '95%',
+    marginBottom: '12%',
+    height: '75%',
     width: '60%',
     maxWidth: '100',
     maxHeight: '100%',
@@ -82,18 +108,21 @@ const LoginDialog = () => {
             maxWidth={'md'}
             PaperProps={{ sx: dialogStyle }}
         >
-            <Component>
+            <Box>
                 <Container>
-                    <Title>To use WhatsApp on your computer:</Title>
-                    <StyledList>
+                    <Title>Chit-Chat</Title>
+                    <QRCOde src={qrCodeImage} alt="QR Code" />
+                    <Glogin>Login using Google Accounts</Glogin>
+                    {/* <StyledList>
                         <ListItem>1. Open WhatsApp on your phone</ListItem>
                         <ListItem>2. Tap Menu Settings and select WhatsApp Web</ListItem>
                         <ListItem>3. Point your phone to this screen to capture the code</ListItem>
-                    </StyledList>
+                    </StyledList> */}
+                    
                 </Container>
                 <Box style={{position:'relative'}}>
-                    <QRCOde src={qrCodeImage} alt="QR Code" />
-                    <Box style={{position: 'absolute', top: '50%', transform: 'translateX(25%) translateY(-25%)'}}>
+                    
+                    <Box style={{position: 'absolute', top: '50%', transform: 'translateX(25%) translateY(-25%)',marginLeft:'30%'}}>
                         { showloginButton ?
                             <GoogleLogin
                                 buttonText=""
@@ -102,7 +131,7 @@ const LoginDialog = () => {
                             /> : null}
                     </Box>
                 </Box>
-            </Component>
+            </Box>
         </Dialog>
     )
 }

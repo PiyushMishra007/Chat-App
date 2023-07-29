@@ -13,14 +13,14 @@ const Component = styled(Box)`
 `;
 
 const Header = styled(AppBar)`
-    background-color: #00A884;
+    background-color: #776BCC;
     height: 125px;
     box-shadow: none;
 `;
     
 const LoginHeader = styled(AppBar)`
-    background: #00bfa5;
-    height: 200px;
+    background:#776BCC;
+    height: 100vh;
     box-shadow: none;
 `;
 

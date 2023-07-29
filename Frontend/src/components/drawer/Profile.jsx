@@ -21,7 +21,7 @@ const BoxWrapper = styled(Box)`
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     & :first-child {
         font-size: 13px;
-        color: #009688;
+        color: #5D54A4;
         font-weight: 200;
     };
     & :last-child {
@@ -52,7 +52,7 @@ const Profile = () => {
                 <Typography>{account.name}</Typography>
             </BoxWrapper>
             <DescriptionContainer>
-                <Typography>This is not your username or pin. This name will be visible to your WhatsApp contacts.</Typography>
+                <Typography>This is not your username or pin. This name will be visible to your Chit-Chat contacts.</Typography>
             </DescriptionContainer>
             <BoxWrapper>
                 <Typography>About</Typography>
